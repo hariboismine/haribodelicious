@@ -1,101 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false" class="vsc-initialized">
+<html>
+<body>
+
+<h1>Typewriter</h1>
+
+<button onclick="typeWriter()">이거 먼저 눌러보쎄용</button>
 
 
-     <div class="div1"></div>
-     <div id="centergood">
-     <div class="div2">
+<p id="demo"></p>
 
-       <div class="typing-txt">
-      <ul>
-        <li style="color:white"></li>
-        <li style="color:white"><a style="color:white">안녕하세요?</a> </li>
-        <li style="color:white"><a style="color:white">왱트입니다</a></li>
-      </ul>
-     </div>
-     <div class="typing">
-     <ul>
-     <li class=""></li>
-     <li class=""></li>
-     <li class="on"></li>
-    </ul>
-  </div>
+<script>
+var i = 0;
+var txt = '안녕하세용? 저는 지금 생기부를 위해 새벽 3시 가까이의 시점에서 코딩을 하고 있어용.';
+var speed = 50;
 
-
-     </div>
-     </div>
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-
-
-  <script>
-
-  var typingBool = false;
-  var typingIdx=0;
-  var liIndex = 0;
-  var liLength = $(".typing-txt>ul>li").length;
-
-  // 타이핑될 텍스트를 가져온다
-  var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text();
-  typingTxt=typingTxt.split(""); // 한글자씩 자른다.
-  if(typingBool==false){ // 타이핑이 진행되지 않았다면
-      typingBool=true;
-      var tyInt = setInterval(typing,80); // 반복동작
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
   }
+}
 
-  function typing(){
-    $(".typing ul li").removeClass("on");
-     $(".typing ul li").eq(liIndex).addClass("on");
-    if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복
-       $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다.
-       typingIdx++;
-     } else{ if(liIndex<liLength-1){
-       //다음문장으로  가기위해 인덱스를 1증가
-         liIndex++;
-       //다음문장을 타이핑하기위한 셋팅
-          typingIdx=0;
-          typingBool = false;
-          typingTxt = $(".typing-txt>ul>li").eq(liIndex).text();
+</script>
 
-       //다음문장 타이핑전 1초 쉰다
-           clearInterval(tyInt);
-            //타이핑종료
+<div><button onclick="typeWriter2()">그다음 이거</button>
 
-           setTimeout(function(){
-             //1초후에 다시 타이핑 반복 시작
-             tyInt = setInterval(typing,100);
-           },1000);
-          } else if(liIndex==liLength-1){
-           //마지막 문장까지 써지면 반복종료
-             clearInterval(tyInt);
-          }
+<script>
+var k = 0;
+var txt2 = '님들아 사랑해요. 어몽어스 화이팅!';
+var speed = 50;
 
-      }
+function typeWriter2() {
+  if (k < txt2.length) {
+    document.getElementById("demo").innerHTML += txt2.charAt(k);
+    k++;
+    setTimeout(typeWriter2, speed);
   }
-  </script>
+}
 
-  <script>
-  $(document).ready(function(){
-  $(document).ready(function(){
-    $(".link1").click(function(){
-      $(".div1").css("background-color","#f7c13d").delay("800").fadeIn();
-      $(".ok").delay("0").fadeIn();
-      $("#in").attr("href", "../1/cate-day.html");
-    });
-    $(".link2").click(function(){
-      $(".div1").css("background-color","#1d1d1d").delay("800").fadeIn();
-      $(".ok").delay("0").fadeIn();
-      $("#in").attr("href", "../1/cate-night.html");
-    });
-  });
-   </script>
+</script>
+</div>
 
-
-
-  </body>
+</body>
 </html>
