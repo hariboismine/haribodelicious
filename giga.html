@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <style>
+  body {
+  background-color: powderblue;
+  }
+  #mimi{
+    display:grid;
+  grid-template-columns: 1fr 1fr;
+      text-align: center;
+      padding-left: 5px;
+      padding-top: 15px;
+  }
+  </style>
+
+<h1>기가현깅을 위한 페이지 입니다.</h1>
+
+<button onclick="typeWriter()">이거 먼저 눌러보쎄용</button>
+
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = '안녕하세요? 저번에 새벽에 트친들한테 이런거 왕창 만들어줬는데 너한테는 안줘서 다시 만들어봄.';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+</script>
+
+<p id="demo2"></p>
+
+<div><button onclick="typeWriter2()">그다음 이거</button>
+
+<script>
+
+var k = 0;
+var txt2 = '  나는 너 하루만에 선른웹진 몰아읽은거 보고 짱이라고 생각했어. 이 효과도 선른웹진 보고 구현해보고 싶다고 생각해서 해봄.';
+var speed = 50;
+
+function typeWriter2() {
+  if (k < txt2.length) {
+    document.getElementById("demo2").innerHTML += txt2.charAt(k);
+    k++;
+    setTimeout(typeWriter2, speed);
+  }
+}
+
+</script>
+
+</div>
+
+<p id="demo3"></p>
+
+<div><button onclick="typeWriter3()">마지막</button>
+
+<script>
+
+var m = 0;
+var txt3 = '인트로 타이핑 효과 말하는거예용.. 움짤감사. 그럼 안녕';
+var speed = 50;
+
+function typeWriter3() {
+  if (m < txt3.length) {
+    document.getElementById("demo3").innerHTML += txt3.charAt(m);
+    m++;
+    setTimeout(typeWriter3, speed);
+  }
+}
+
+</script>
+
+</div>
+<div id="mimi">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https://k.kakaocdn.net/dn/Jt2lS/btqEninM2kI/4dytV0tFkximWgQeEKpMg1/img.gif" width="40%">
+  </div>
+</body>
+</html>
