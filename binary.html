@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+  h1{
+    text-align:center;
+  }
+
+  body {
+    padding-left: 50px;
+  }
+  </style>
+
+  <h1>융합과학 디지털신호 변환 자바스크립트로 구현해보기</h1>
+
+  <body>
+    <script>
+    var str1 = prompt("변환하고 싶은 값을 입력해주세요!", 10);
+    var num1 = parseInt(str1);
+    document.write("넣어준 값 : " + num1);
+</script>
+<br>
+<br>
+<h2>[변환 결과]</h2>
+<br>
+<script>
+var a = num1.toString(2);
+document.write("2 진수로 변환 : " + a);
+</script>
+<br>
+
+<script>
+var b = num1.toString(8);
+document.write("8 진수로 변환 : " + b);
+</script>
+<br>
+
+<script>
+var c = num1.toString(16);
+document.write("16 진수로 변환 : " + c);
+</script>
+
+  </body>
+</html>
