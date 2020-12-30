@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+  <style>
+  body {
+  background-color: plum;
+  }
+  #mimi{
+    display:grid;
+  grid-template-columns: 1fr 1fr;
+      text-align: center;
+      padding-left: 5px;
+      padding-top: 15px;
+  }
+  </style>
+
+<h1>하이앵</h1>
+
+<button onclick="typeWriter()">이거 먼저 눌러보쎄용</button>
+
+
+<p id="demo"></p>
+
+<script>
+var i = 0;
+var txt = '안녕하세요? 세특기간때 이런거 왕창 만들어서 친구들한테 뿌렸는데 앵님을 빼먹었었네요...♡';
+var speed = 50;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+</script>
+
+<p id="demo2"></p>
+
+<div><button onclick="typeWriter2()">그다음 이거</button>
+
+<script>
+
+var k = 0;
+var txt2 = '숭짱대 개강여신 유놔 알라뷰 쥬밀 짱 쥬화큐 짱 (쥬화큐 다음으로 쥬밀 좋아하시는거 맞겠죠? 이앵..)';
+var speed = 50;
+
+function typeWriter2() {
+  if (k < txt2.length) {
+    document.getElementById("demo2").innerHTML += txt2.charAt(k);
+    k++;
+    setTimeout(typeWriter2, speed);
+  }
+}
+
+</script>
+
+</div>
+
+<p id="demo3"></p>
+
+<div><button onclick="typeWriter3()">마지막</button>
+
+<script>
+
+var m = 0;
+var txt3 = '이앵.. 알라뷰';
+var speed = 50;
+
+function typeWriter3() {
+  if (m < txt3.length) {
+    document.getElementById("demo3").innerHTML += txt3.charAt(m);
+    m++;
+    setTimeout(typeWriter3, speed);
+  }
+}
+
+</script>
+
+</div>
+<div id="mimi">
+  <img src="http://file3.instiz.net/data/cached_img/upload/2020/11/18/20/2e2420b0c2e6d7820bd41c207121ea9d.gif" width="40%">
+  </div>
+</body>
+</html>
